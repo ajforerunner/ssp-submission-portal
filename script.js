@@ -1,29 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get form elements
-    const form = document.querySelector('form');
-    const submissionType = document.getElementById('submission-type');
-    
-    // Show different form fields based on submission type
-    submissionType.addEventListener('change', function() {
-        // Add any custom logic here to show/hide fields based on the submission type
+    // Initialize Select2 for searchable dropdowns
+    $(document).ready(function() {
+        $('.searchable-select').select2({
+            placeholder: "Search and select...",
+            allowClear: true
+        });
+        
+        // Fix for Select2 with icon
+        $('.select2-selection').css('padding-left', '28px');
     });
     
-    // Add camera capture option if available
-    if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-        const fileUploadGroup = document.getElementById('file-upload').closest('.form-group');
-        
-        const cameraButton = document.createElement('button');
-        cameraButton.type = 'button';
-        cameraButton.textContent = 'Take Photo';
-        cameraButton.className = 'camera-button';
-        cameraButton.onclick = openCamera;
-        
-        fileUploadGroup.appendChild(cameraButton);
-    }
+    // File upload handling
+    const fileInput = document.getElementById('file-upload');
+    const fileLabel = document.getElementById('file-name');
+    const fileContainer = document.querySelector('.file-upload-container');
     
-    function openCamera() {
-        // Camera functionality would go here
-        // This is a simplified example - actual implementation would be more complex
-        alert('Camera functionality will be implemented in the next phase.');
-    }
-});
+    fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+            fileLabel.textContent = fileInput.files[0].name;
+            fileContainer.style.borderColor = '#ff6b4a';
+            fileContainer.style.backgroundColor = '#fff8f6';
+        } else {
+            fileLabel.textContent = 'Drag & drop or click to upload';
+            fileContainer.style.borderColor = '#ddd';
+            fileContainer.style.backgroundColor = '#f9f9f9';
+        }
+    });
+    
+    // Drag and drop support
+    fileContainer.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        fileContainer.style.borderColor = '#ff6b4a';
+        fileContainer.style.backgroundColor = '#fff8f6';
+    });
+    
+    fileContainer.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        if (fileInput.files.length === 0) {
+            fileContainer.style.borderColor = '#ddd';
+            fileContainer.style.backgroundColor = '#f9f9f9';
+        }
+    });
+    
+    fileContainer.addEventListener('drop', function(e) {
+        e.preventDefault();
+    });
+    
+    // Add animation for form inputs
+    const formInputs = document.querySelectorAll('input, select, textarea');
+    
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.closest('.form-group').classList.add
