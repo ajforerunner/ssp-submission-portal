@@ -1,22 +1,65 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
 .container {
-  max-width: 800px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 20px;
+}
+
+.form-card {
   background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  background-color: #ff6b4a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 30px;
 }
 
 header {
   text-align: center;
   margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 16px;
 }
 
 form {
@@ -25,29 +68,163 @@ form {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  position: relative;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #555;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.icon-left {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  z-index: 1;
+}
+
+.textarea-container .icon-left {
+  top: 16px;
+  transform: none;
 }
 
 input, select, textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 12px 12px 40px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  outline: none;
 }
 
-button {
-  background-color: #4CAF50;
+input:focus, select:focus, textarea:focus {
+  border-color: #ff6b4a;
+  box-shadow: 0 0 0 2px rgba(255, 107, 74, 0.2);
+  background-color: #fff;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.file-upload-container {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: all 0.3s;
+}
+
+.file-upload-container:hover {
+  border-color: #ff6b4a;
+  background-color: #fff8f6;
+}
+
+.file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.file-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+}
+
+.file-upload-label i {
+  font-size: 32px;
+  color: #ff6b4a;
+}
+
+.hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #ff6b4a;
   color: white;
-  padding: 12px 20px;
+  padding: 14px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 20px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(255, 107, 74, 0.3);
 }
+
+.submit-btn:hover {
+  background-color: #ff5436;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255, 107, 74, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(255, 107, 74, 0.4);
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Select2 Custom Styling */
+.select2-container--default .select2-selection--single {
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px 12px 8px 30px;
+  background-color: #f9f9f9;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 28px;
+  padding-left: 0;
+  color: #333;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 45px;
+}
+
+.select2-dropdown {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  bor
