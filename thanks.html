@@ -5,25 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submission Received - Thank You</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .success-icon {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-message {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .thank-you-message p {
+            margin-bottom: 15px;
+        }
+        
+        .return-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #ff6b4a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .return-link:hover {
+            text-decoration: underline;
+        }
+        
+        .success-animation {
+            animation: success-bounce 0.8s ease-in-out;
+        }
+        
+        @keyframes success-bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Thank You</h1>
-            <h2>Your submission has been received</h2>
-        </header>
-        
-        <main>
+        <div class="form-card">
             <div class="thank-you-message">
+                <div class="success-animation">
+                    <i class="fas fa-check-circle success-icon"></i>
+                </div>
+                <h1>Thank You!</h1>
                 <p>Your SSP documentation has been successfully submitted.</p>
                 <p>A confirmation email has been sent to your email address.</p>
-                <p>You may now close this window or <a href="index.html">return to the submission form</a>.</p>
+                <a href="index.html" class="return-link">
+                    <i class="fas fa-arrow-left"></i> Return to submission form
+                </a>
             </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 BI Projects</p>
-        </footer>
+        </div>
     </div>
 </body>
 </html>
