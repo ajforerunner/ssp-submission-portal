@@ -5,88 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subcontractor Safety Performance Submission</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Subcontractor Safety Performance</h1>
-            <h2>Documentation Submission Portal</h2>
-        </header>
-        
-        <main>
-            <form action="https://formsubmit.co/byesukbiprojects.uk@equans.com" method="POST" enctype="multipart/form-data">
-                <!-- Hidden FormSubmit fields -->
-                <input type="hidden" name="_subject" value="SSP Submission">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://ajforerunner.github.io/ssp-submission-portal/thanks.html">
-                
-                <!-- Email is required for _autoresponse to work -->
-                <input type="hidden" name="_autoresponse" value="Thank you for your SSP submission. We have received your documentation and will process it shortly.">
-                
-                <div class="form-group">
-                    <label for="submission-type">Submission Type</label>
-                    <select id="submission-type" name="Submission Type" required>
-                        <option value="" selected disabled>Select submission type</option>
-                        <option value="Black Hat Meeting">Black Hat Meeting Attendance</option>
-                        <option value="Daily Activity Brief">Daily Activity Brief</option>
-                        <option value="Tool Box Talk">Tool Box Talk</option>
-                        <option value="Observation Report">Observation Report</option>
-                        <option value="Equipment Check">Weekly Equipment Check</option>
-                        <option value="Innovation Idea">Innovation Idea</option>
-                        <option value="H&S Visit">Monthly H&S Visit</option>
-                    </select>
+        <div class="form-card">
+            <header>
+                <div class="logo">
+                    <i class="fas fa-hard-hat"></i>
                 </div>
-                
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="Date" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subcontractor">Subcontractor Name</label>
-                    <select id="subcontractor" name="Subcontractor" required>
-                        <option value="" selected disabled>Select your company</option>
-                        <option value="ABB">ABB</option>
-                        <option value="Airedale">Airedale</option>
-                        <option value="Andel">Andel</option>
-                        <!-- Add all subcontractors from your list -->
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="project">Project/Site Name</label>
-                    <input type="text" id="project" name="Project" placeholder="Enter project or site name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="contact-name">Contact Name</label>
-                    <input type="text" id="contact-name" name="Contact Name" placeholder="Your name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="contact-email">Contact Email</label>
-                    <input type="email" id="contact-email" name="email" placeholder="Your email address" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">Additional Notes</label>
-                    <textarea id="notes" name="Notes" rows="4" placeholder="Enter any additional information"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="file-upload">Upload Documentation</label>
-                    <input type="file" id="file-upload" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
-                    <p class="hint">Accept PDF, Word documents, and images (max 5MB)</p>
-                </div>
-                
-                <button type="submit">Submit Documentation</button>
-            </form>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 BI Projects</p>
-        </footer>
+                <h1>Safety Performance</h1>
+                <p class="subtitle">Submit your documentation below</p>
+            </header>
+            
+            <main>
+                <form action="https://formsubmit.co/byesukbiprojects.uk@equans.com" method="POST" enctype="multipart/form-data">
+                    <!-- Hidden FormSubmit fields -->
+                    <input type="hidden" name="_subject" value="SSP Submission">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://ajforerunner.github.io/ssp-submission-portal/thanks.html">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your SSP submission. We have received your documentation and will process it shortly.">
+                    
+                    <div class="form-group">
+                        <label for="submission-type">Submission Type</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-clipboard-list icon-left"></i>
+                            <select id="submission-type" name="Submission Type" required>
+                                <option value="" selected disabled>Select submission type</option>
+                                <option value="Black Hat Meeting">Black Hat Meeting Attendance</option>
+                                <option value="Daily Activity Brief">Daily Activity Brief</option>
+                                <option value="Tool Box Talk">Tool Box Talk</option>
+                                <option value="Observation Report">Observation Report</option>
+                                <option value="Equipment Check">Weekly Equipment Check</option>
+                                <option value="Innovation Idea">Innovation Idea</option>
+                                <option value="H&S Visit">Monthly H&S Visit</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar icon-left"></i>
+                            <input type="date" id="date" name="Date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subcontractor">Subcontractor Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-building icon-left"></i>
+                            <select id="subcontractor" name="Subcontractor" class="searchable-select" required>
+                                <option value="" selected disabled>Select your company</option>
+                                <option value="ABB">ABB</option>
+                                <option value="Airedale">Airedale</option>
+                                <option value="Andel">Andel</option>
+                                <option value="Anord Mardix">Anord Mardix</option>
+                                <option value="Armstrong">Armstrong</option>
+                                <option value="BTS - controls">BTS - controls</option>
+                                <option value="Building Technology Systems">Building Technology Systems</option>
+                                <option value="Cahills">Cahills</option>
+                                <option value="CAICE">CAICE</option>
+                                <option value="Cold Clad Ltd">Cold Clad Ltd</option>
+                                <option value="Command Communications">Command Communications</option>
+                                <option value="Critical Business Solutions">Critical Business Solutions</option>
+                                <option value="DAS Fire">DAS Fire</option>
+                                <option value="Elan Lifts">Elan Lifts</option>
+                                <option value="Enhanced Control System (ECS)">Enhanced Control System (ECS)</option>
+                                <option value="Fenbay">Fenbay</option>
+                                <option value="Finnings">Finnings</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project">Project/Site Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-marker-alt icon-left"></i>
+                            <select id="project" name="Project" class="searchable-select" required>
+                                <option value="" selected disabled>Select project/site</option>
+                                <option value="Site A">Site A</option>
+                                <option value="Site B">Site B</option>
+                                <option value="Site C">Site C</option>
+                                <!-- Add more project sites as needed -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-name">Contact Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user icon-left"></i>
+                            <input type="text" id="contact-name" name="Contact Name" placeholder="Your name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact-email">Contact Email</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope icon-left"></i>
+                            <input type="email" id="contact-email" name="email" placeholder="Your email address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <div class="input-with-icon textarea-container">
+                            <i class="fas fa-comment icon-left"></i>
+                            <textarea id="notes" name="Notes" rows="4" placeholder="Enter any additional information"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group upload-group">
+                        <label for="file-upload">Upload Documentation</label>
+                        <div class="file-upload-container">
+                            <input type="file" id="file-upload" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" class="file-input">
+                            <div class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span id="file-name">Drag & drop or click to upload</span>
+                            </div>
+                        </div>
+                        <p class="hint">PDF, Word documents, and images (max 5MB)</p>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Submit Documentation</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+            </main>
+            
+            <footer>
+                <p>&copy; 2025 BI Projects</p>
+            </footer>
+        </div>
     </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
