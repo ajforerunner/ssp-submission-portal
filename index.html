@@ -15,7 +15,69 @@
         
         <main>
             <form action="https://formsubmit.co/byesukbiprojects.uk@equans.com" method="POST" enctype="multipart/form-data">
-                <!-- Form fields will go here -->
+               <form action="https://formsubmit.co/YOUR-EMAIL-HERE" method="POST" enctype="multipart/form-data">
+    <!-- Hidden FormSubmit fields -->
+    <input type="hidden" name="_subject" value="SSP Submission">
+    <input type="hidden" name="_captcha" value="false">
+    
+    <div class="form-group">
+        <label for="submission-type">Submission Type</label>
+        <select id="submission-type" name="Submission Type" required>
+            <option value="" selected disabled>Select submission type</option>
+            <option value="Black Hat Meeting">Black Hat Meeting Attendance</option>
+            <option value="Daily Activity Brief">Daily Activity Brief</option>
+            <option value="Tool Box Talk">Tool Box Talk</option>
+            <option value="Observation Report">Observation Report</option>
+            <option value="Equipment Check">Weekly Equipment Check</option>
+            <option value="Innovation Idea">Innovation Idea</option>
+            <option value="H&S Visit">Monthly H&S Visit</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="Date" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subcontractor">Subcontractor Name</label>
+        <select id="subcontractor" name="Subcontractor" required>
+            <option value="" selected disabled>Select your company</option>
+            <option value="ABB">ABB</option>
+            <option value="Airedale">Airedale</option>
+            <option value="Andel">Andel</option>
+            <!-- Add all subcontractors from your list -->
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="project">Project/Site Name</label>
+        <input type="text" id="project" name="Project" placeholder="Enter project or site name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="contact-name">Contact Name</label>
+        <input type="text" id="contact-name" name="Contact Name" placeholder="Your name" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="contact-email">Contact Email</label>
+        <input type="email" id="contact-email" name="Contact Email" placeholder="Your email address" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="notes">Additional Notes</label>
+        <textarea id="notes" name="Notes" rows="4" placeholder="Enter any additional information"></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label for="file-upload">Upload Documentation</label>
+        <input type="file" id="file-upload" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+        <p class="hint">Accept PDF, Word documents, and images (max 25MB)</p>
+    </div>
+    
+    <button type="submit">Submit Documentation</button>
+</form>
                 <button type="submit">Submit Documentation</button>
             </form>
         </main>
