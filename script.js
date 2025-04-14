@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add camera capture option if available
     if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
-        const fileUploadGroup = document.querySelector('.form-group:has(#file-upload)');
+        const fileUploadGroup = document.getElementById('file-upload').closest('.form-group');
         
         const cameraButton = document.createElement('button');
         cameraButton.type = 'button';
